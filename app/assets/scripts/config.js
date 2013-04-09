@@ -4,7 +4,8 @@ require.config({
   paths: {
     jquery: '../components/jquery/jquery.min',
     backbone: '../components/backbone/backbone-min',
-    lodash: '../components/lodash/lodash'
+    lodash: '../components/lodash/lodash',
+    text: '../components/text/text'
   },
   shim: {
     lodash: {
