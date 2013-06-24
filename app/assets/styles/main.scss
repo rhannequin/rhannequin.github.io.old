@@ -1,25 +1,28 @@
 @import '../components/sass-bootstrap/lib/bootstrap.scss';
 @import '../components/sass-bootstrap/lib/responsive.scss';
 
+$title: #196ccb;
+
 body {
-  background-image: url(/assets/images/mw.jpg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  background-size: 100% 100%;
   padding: 0;
   margin: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(/assets/images/mw.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
   font-family: 'Londrina Solid', cursive;
   font-size: 18px;
 }
 
 .container {
-  width: 100%;
+  width: 900px;
 
   .category {
     margin-bottom: 150px;
-    padding: 70px;
-    color: #196ccb;
+    padding: 25px;
+    color: $title;
     text-align: center;
     background-color: #dadfe5;
   }
@@ -41,7 +44,7 @@ body {
         a {
           color: #011731;
           &:hover, &:focus {
-            color: #196ccb;
+            color: $title;
             background: none;
           }
         }
@@ -50,6 +53,32 @@ body {
   }
 
   .abilities {
-    
+    color: #565656;
+    font-size: 30px;
+    h1 {
+      color: $title;
+      margin-bottom: 10px;
+    }
+    .main-languages {
+      width: 415px;
+      margin: auto;
+      margin-bottom: 40px;
+      .language {
+        float: left;
+        width: 200px;
+        img {
+          margin-bottom: 30px;
+        }
+      }
+    }
+    .sub-languages {
+      font-size: 20px;
+      width: 650px;
+      margin: auto;
+      &>.span4 {
+        width: 150px;
+      }
+    }
   }
+
 }
