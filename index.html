@@ -1,0 +1,56 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Profile</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="assets/styles/main.css">
+    <script src="assets/scripts/vendor/modernizr.js"></script>
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>Profile</h1>
+    </div>
+
+    <script id="repo-list-template" type="text/x-template">
+      <% var i = 0; %>
+      <% _.each(repos, function (repo) { %>
+        <% if(i%2 === 0) { %>
+        <div class="row-fluid">
+        <% } %>
+          <div class="span6 work">
+            <h2><a href="<%= repo.html_url %>"><%= repo.name %></a></h2>
+            <p>Description: <%= repo.description %></p>
+            <p>Created: <%= repo.created_at %></p>
+            <p>Updated: <%= repo.updated_at %></p>
+            <p>Main language: <%= repo.language === null ? 'Not defined' : repo.language %></p>
+            <p>Forks: <%= repo.forks_count > 0 ? repo.forks_count : 'not yet' %></p>
+          </div>
+        <% if(i%2 === 1 || i - 1 === repos.length) { %>
+        </div>
+        <% } %>
+      <% i++; }); %>
+    </script>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+
+    <script data-main="assets/scripts/app" src="assets/components/requirejs/require.js"></script>
+  </body>
+</html>
