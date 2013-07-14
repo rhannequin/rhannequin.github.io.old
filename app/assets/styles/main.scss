@@ -52,7 +52,7 @@ body {
     }
   }
 
-  .abilities {
+  .languages {
     color: #565656;
     font-size: 30px;
     h1 {
@@ -78,6 +78,14 @@ body {
       &>.span4 {
         width: 150px;
       }
+    }
+  }
+
+  .other {
+    .apis p {
+      font-size: 70px;
+      height: 90px;
+      padding-top: 35px;
     }
   }
 
